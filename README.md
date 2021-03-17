@@ -1,2 +1,2 @@
 # NFTPractice
-For testing
+For testing purpose
