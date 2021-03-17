@@ -1,0 +1,240 @@
+1. addorder:
+
+Endpoints:  cula-test.tdk.dk/cula-services/soap/CULAService
+
+Request:
+POST http://cula-test.tdk.dk/cula-services/soap/CULAService
+
+POST data:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dk="dk.tdc.order.cula" xmlns:head="http://header.cu.tdc.dk">
+   <soapenv:Header>
+      <head:OnBehalfOfUserId />
+      <head:RequestId />
+      <head:AuthenticationHeader>
+         <head:SessionID />
+      </head:AuthenticationHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <dk:addOrder>
+         <dk:addOrderRequest>
+            <dk:userId>R20216</dk:userId>
+            <dk:trackingId>123</dk:trackingId>
+            <dk:versionId>1</dk:versionId>
+            <dk:companyId>TDC</dk:companyId>
+            <dk:requestorReference />
+            <dk:dealerCode>01-9999</dk:dealerCode>
+            <dk:externalId>225556868</dk:externalId>
+            <dk:orderEntryNo>55</dk:orderEntryNo>
+            <dk:salesChannel>DEAL</dk:salesChannel>
+            <dk:orderType>200</dk:orderType>
+            <dk:catalog>SPCAT</dk:catalog>
+            <dk:execute>true</dk:execute>
+            <dk:customer>
+               <dk:createNew>true</dk:createNew>
+               <dk:nameAddressSpecification>
+                  <dk:streetName>Fiveabcvej</dk:streetName>
+                  <dk:streetNumber>20</dk:streetNumber>
+                  <dk:zip>9000</dk:zip>
+                  <dk:city>ÅRHUS</dk:city>
+                  <dk:nameSpecification>
+                     <dk:lastBusinessName>Business Customer February 36</dk:lastBusinessName>
+                  </dk:nameSpecification>
+                  <dk:emailAddress1>dsar@tdc.dk</dk:emailAddress1>
+               </dk:nameAddressSpecification>
+            </dk:customer>
+            <dk:account>
+               <dk:createNew>true</dk:createNew>
+               <dk:blProdFreq></dk:blProdFreq>
+               <dk:cvrNumber></dk:cvrNumber>
+               <dk:segment></dk:segment>
+               <dk:nameAddressSpecification>
+                  <dk:streetName>Fiveabcvej</dk:streetName>
+                  <dk:streetNumber>20</dk:streetNumber>
+                  <dk:zip>9000</dk:zip>
+                  <dk:city>ÅRHUS</dk:city>
+                  <dk:nameSpecification>
+                     <dk:lastBusinessName>Business Customer February 36</dk:lastBusinessName>
+                  </dk:nameSpecification>
+                  <dk:emailAddress1>dsar@tdc.dk</dk:emailAddress1>
+               </dk:nameAddressSpecification>
+            </dk:account>
+            <dk:subscription>
+               <dk:createNew>true</dk:createNew>
+               <dk:nameAddressSpecification>
+                  <dk:streetName>Fiveabcvej</dk:streetName>
+                  <dk:streetNumber>20</dk:streetNumber>
+                  <dk:zip>9000</dk:zip>
+                  <dk:city>ÅRHUS</dk:city>
+                  <dk:nameSpecification>
+                     <dk:lastBusinessName>Business Customer February 36</dk:lastBusinessName>
+                  </dk:nameSpecification>
+                  <dk:emailAddress1>dsar@tdc.dk</dk:emailAddress1>
+               </dk:nameAddressSpecification>
+            </dk:subscription>
+            <dk:bookingDateTime>
+               <dk:bookingType>D</dk:bookingType>
+               <dk:bookingDato>2021-02-15</dk:bookingDato>
+            </dk:bookingDateTime>
+            <!--Optional:-->
+            <dk:orderConfirmation>
+               <dk:customerEmail>
+                  <dk:emailAddress1>dsar@tdc.dk</dk:emailAddress1>
+               </dk:customerEmail>
+            </dk:orderConfirmation>
+            <dk:shipmentNameAddressInfo>
+               <dk:city>ÅRHUS</dk:city>
+               <dk:streetNumber>20</dk:streetNumber>
+               <dk:nameSpecification>
+                  <dk:lastBusinessName>Business Customer February 36</dk:lastBusinessName>
+               </dk:nameSpecification>
+               <dk:streetName>Fiveabcvej</dk:streetName>
+               <dk:zip>9000</dk:zip>
+               <dk:emailAddress1>dsar@tdc.dk</dk:emailAddress1>
+            </dk:shipmentNameAddressInfo>
+            <dk:installPoint>
+               <dk:createNew>true</dk:createNew>
+               <dk:allowTakeover>false</dk:allowTakeover>
+            </dk:installPoint>
+            <dk:orderProduct>
+               <dk:orderProductPrice>
+                  <dk:selectAll>true</dk:selectAll>
+               </dk:orderProductPrice>
+               <dk:spcOrderProduct>
+                  <dk:action>ADD</dk:action>
+                  <dk:productCode>SCALE_B_32_396_33</dk:productCode>
+                  <dk:additionalProducts>
+                     <dk:action>ADD</dk:action>
+                     <dk:productCode>EMU_KONTAKT</dk:productCode>
+                     <dk:orderParameters>
+                        <dk:action>ADD</dk:action>
+                        <dk:parameterCode>KONTAKT_NAVN</dk:parameterCode>
+                        <dk:parameterValue>arumoy</dk:parameterValue>
+                     </dk:orderParameters>
+                     <dk:orderParameters>
+                        <dk:action>ADD</dk:action>
+                        <dk:parameterCode>KONTAKT_NUMMER</dk:parameterCode>
+                        <dk:parameterValue>91412518</dk:parameterValue>
+                     </dk:orderParameters>
+                     <dk:orderParameters>
+                        <dk:action>ADD</dk:action>
+                        <dk:parameterCode>KONTAKT_MAIL</dk:parameterCode>
+                        <dk:parameterValue>dsar@tdc.dk</dk:parameterValue>
+                     </dk:orderParameters>
+                     <dk:orderParameters>
+                        <dk:action>ADD</dk:action>
+                        <dk:parameterCode>KONTAKT_MAIL2</dk:parameterCode>
+                     </dk:orderParameters>
+                  </dk:additionalProducts>
+               </dk:spcOrderProduct>
+            </dk:orderProduct>
+         </dk:addOrderRequest>
+      </dk:addOrder>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+[no cookies]
+
+Test Data Required: streetName,streetNumber,zip,City,lastBusinessName,Email-- 1
+Sample Data: Fiveabcvej,20,9000,ÅRHUS,Business Customer February 36,dsar@tdc.dk,SCALE_B_32_396_33
+
+2. UpdateAgreement:
+
+Endpoints: cula-test.tdk.dk/cula-services/soap/CULinkAdaptorServiceService
+
+POST http://cula-test.tdk.dk/cula-services/soap/CULinkAdaptorServiceService
+
+POST data:
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://java.sun.com/products/oss/xml/ServiceActivation" xmlns:co="http://java.sun.com/products/oss/xml/Common" xmlns:head="http://header.cu.tdc.dk" xmlns:java0="java:dk.tdc.soa.culinkadaptor" xmlns:mslv-sa="http://www.metasolv.com/oss/ServiceActivation/2003" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <env:Header>
+      <head:AuthenticationHeader>
+         <head:SessionID/>
+          
+      </head:AuthenticationHeader>
+        
+      <head:OnBehalfOfUserId/>
+   </env:Header>
+   <env:Body env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <java0:updateAgreement xmlns:dategen="dk.tdc.om.SysdateGenerator" xmlns:delay="dk.tdc.om.DelayTask" xmlns:java1="java:dk.tdc.soa.general" xmlns:java2="java:dk.tdc.soa.culink.extern.datatypes.adaptor" xmlns:java3="java:dk.tdc.culink.model.elementer.adaptor">
+         <java0:updateAgreementRequest>
+            <java1:UserId>R20216</java1:UserId>
+            <java1:TrackingId>SSCR000024407</java1:TrackingId>
+            <java1:VersionId>1</java1:VersionId>
+            <java1:CompanyId>TDC</java1:CompanyId>
+            <java2:DealerCode>01-9999</java2:DealerCode>
+            <java2:CurrentSubscriberNumber>62630708</java2:CurrentSubscriberNumber>
+            <java2:BookingDateTime>
+               <java3:BookingDato>2020-11-02</java3:BookingDato>
+               <java3:BookingType>D</java3:BookingType>
+            </java2:BookingDateTime>
+            <java2:OrderId>8059072</java2:OrderId>
+            <java2:OrderProduct>
+               <java3:Action>NONE</java3:Action>
+               <java3:ProductCode>SP01_758_11_MOBIL</java3:ProductCode>
+               <java3:ProductName>Fri Tale / 60 GB</java3:ProductName>
+               <java3:AdditionalProducts>
+                  <java3:Action>NONE</java3:Action>
+                  <java3:ProductCode>EMU_MOBILE_NUMBER</java3:ProductCode>
+                  <java3:ProductName>Mobilnummer</java3:ProductName>
+                  <java3:OrderParameters>
+                     <java3:Action>NONE</java3:Action>
+                     <java3:ParameterCode>MSISDN</java3:ParameterCode>
+                     <java3:ParameterValue>62630708</java3:ParameterValue>
+                  </java3:OrderParameters>
+               </java3:AdditionalProducts>
+               <java3:AdditionalProducts>
+                  <java3:Action>ADD</java3:Action>
+                  <java3:ProductCode>AP32_913_03</java3:ProductCode>
+                  <java3:ProductName>Fri sms og mms</java3:ProductName>
+               </java3:AdditionalProducts>
+            </java2:OrderProduct>
+            <java2:SalesChannel>SSC</java2:SalesChannel>
+            <java2:Catalog>SSCAT</java2:Catalog>
+         </java0:updateAgreementRequest>
+      </java0:updateAgreement>
+   </env:Body>
+</env:Envelope>
+
+[no cookies]
+
+Data Required: SuibscriberNumber,Product Code,Product Name--10
+
+Sample data: 62630723,AP32_316_06,Spærring for data via satellit
+62630729,AP32_829_07,Voicemail
+62630732,PG_MV_INKL_YS_20,Inkluderet
+
+
+3.updatCustomer:
+
+Endpoint:/cula-services/soap/CULinkAdaptorServiceService
+xml:
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://java.sun.com/products/oss/xml/ServiceActivation" xmlns:co="http://java.sun.com/products/oss/xml/Common" xmlns:head="http://header.cu.tdc.dk" xmlns:java0="java:dk.tdc.soa.culinkadaptor" xmlns:mslv-sa="http://www.metasolv.com/oss/ServiceActivation/2003" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <env:Header>
+      <head:AuthenticationHeader>
+         <head:SessionID />
+          
+      </head:AuthenticationHeader>
+        
+      <head:OnBehalfOfUserId />
+   </env:Header>
+   <env:Body env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <m:updateCustomer xmlns:m="java:dk.tdc.soa.culinkadaptor" xmlns:java1="java:dk.tdc.soa.general" xmlns:java2="java:dk.tdc.soa.culink.extern.datatypes.adaptor" xmlns:java3="java:dk.tdc.culink.model.elementer.adaptor">
+         <m:updateCustomerRequest>
+            <java1:UserId>${USERID}</java1:UserId>
+            <java1:TrackingId>SSCR011979030</java1:TrackingId>
+            <java1:VersionId>1</java1:VersionId>
+            <java1:CompanyId>TCS</java1:CompanyId>
+            <java2:DealerCode>01-7050</java2:DealerCode>
+            <java2:CurrentSubscriberNumber>${LID}</java2:CurrentSubscriberNumber>
+            <java2:CustomerNumber xsi:nil="true" />
+            <java2:OrderId />
+            <java2:CustomerNameAddressInfo>
+               <java3:EmailAddress1>${Email}</java3:EmailAddress1>
+               <java3:EmailAddress2 xsi:nil="true" />
+            </java2:CustomerNameAddressInfo>
+         </m:updateCustomerRequest>
+      </m:updateCustomer>
+   </env:Body>
+</env:Envelope>
+
+Data Required:LID,Email
+Sample Data:EM143020,shrgh100@nuuday.dk
